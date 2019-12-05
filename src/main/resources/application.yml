@@ -1,0 +1,24 @@
+#zookeeper注册中心配置
+regCenter:
+  #zookeeper注册中心IP与端口列表
+  #serverList: 192.168.157.155:2181
+  serverList: 114.242.146.109:8603,114.242.146.109:8602,114.242.146.109:8601
+
+  #Zookeeper的命名空间
+  namespace: elastic-job-lite-springboot-rj
+
+simpleJob:
+  #cron表达式，用于控制作业触发时间
+  cron: 0/10 * * * * ?
+  #作业分片总数
+  shardingTotalCount: 3
+  #分片序列号和参数用等号分隔，多个键值对用逗号分隔，分片序列号从0开始，不可大于或等于作业分片总数，如：0=a,1=b,2=c
+  shardingItemParameters: 0=Beijing,1=Shanghai,2=Guangzhou
+
+#dataflowJob:
+#  #cron表达式，用于控制作业触发时间
+#  cron: 0/30 * * * * ?
+#  #作业分片总数
+#  shardingTotalCount: 3
+#  #分片序列号和参数用等号分隔，多个键值对用逗号分隔，分片序列号从0开始，不可大于或等于作业分片总数，如：0=a,1=b,2=c
+#  shardingItemParameters: 0=Beijing,1=Shanghai,2=Guangzhou
